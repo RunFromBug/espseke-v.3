@@ -8,7 +8,6 @@ html {
 .site-container {
   margin-top: 17vh;
   display: flex;
-  height: 100vh;
 }
 
 .background-column {
@@ -21,7 +20,7 @@ html {
   padding: 60px;
   background-color: #ffffff;
   color: #000;
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .news-column h1 {
@@ -30,15 +29,27 @@ html {
 }
 
 .news-card {
-  background-color: #f4f4f4;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  background-color: transparent;
   padding: 20px;
   margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .news-card h2 {
-  margin: 0 0 10px;
+  margin: 0; /* Remove extra margin */
+}
+.news-card img {
+  width: 25vw;
+  height: 25vh;
+  object-fit: cover;
+  margin-right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.news-column .news-card:first-child {
+  margin-top: -10vh; /* Adjust the value as needed */
+  position: relative; /* Ensure it doesn't affect other elements */
+  z-index: 1; /* Bring it to the front if necessary */
 }
 .page-title {
   position: absolute;
@@ -50,4 +61,18 @@ html {
   letter-spacing: 3px;
   font-weight: bold;
   font-family: "AlienEnergy", sans-serif;
+}
+.nav.inverted {
+  color: white; /* Change text color */
+}
+
+.nav.inverted .menu a {
+  color: black; /* Adjust link color */
+  border-color: black; /* Adjust border color */
+}
+
+.nav.inverted .menu a:hover,
+.nav.inverted .menu a.active {
+  background-color: black; /* Fill the rectangle */
+  color: white; /* Change text color for contrast */
 }
