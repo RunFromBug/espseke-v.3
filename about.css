@@ -1,0 +1,22 @@
+#obrazky {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+#obrazky img {
+  margin: 0 7.5vw; /* Add horizontal spacing between images */
+}
+img {
+  margin: 10px;
+}
+#title {
+  width: 50vw;
+  height: auto;
+}
+#cifer {
+  height: auto;
+  width: 20vw;
+}

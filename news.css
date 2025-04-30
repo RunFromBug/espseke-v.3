@@ -1,0 +1,53 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+.site-container {
+  margin-top: 17vh;
+  display: flex;
+  height: 100vh;
+}
+
+.background-column {
+  width: 5%; /* ← smaller width for thin left bar */
+  background-color: transparent;
+}
+
+.news-column {
+  width: 95%;
+  padding: 60px;
+  background-color: #ffffff;
+  color: #000;
+  overflow-y: auto;
+}
+
+.news-column h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.news-card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.news-card h2 {
+  margin: 0 0 10px;
+}
+.page-title {
+  position: absolute;
+  top: 0vh;
+  left: 5%;
+  font-size: 98px;
+  color: white;
+  z-index: 10;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-family: "AlienEnergy", sans-serif;
+}
