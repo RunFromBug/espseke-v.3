@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="apply.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo"><img src="logo.png" alt="Logo" class="logo" /></div>
+        <nav class="menu">
+          <a href="index.html">About</a>
+          <a href="apply.html" class="active">Apply</a>
+          <a href="#">Products</a>
+          <a href="news.html">News</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="form-container">
+      <div class="nice-form-group">
+        <label>Meno</label>
+        <input type="text" placeholder="tvoje krstné meno" />
+      </div>
+
+      <div class="nice-form-group">
+        <label>Priezvisko</label>
+        <small>With additional information below the label</small>
+        <input type="text" placeholder="tvoje priezvisko" />
+      </div>
+
+      <div class="nice-form-group">
+        <label>Trieda</label>
+        <input type="text" placeholder="tvoja trieda" />
+      </div>
+
+      <fieldset class="nice-form-group">
+        <legend>Vyber si hru</legend>
+        <div class="nice-form-group">
+          <input type="radio" name="radio" id="LoL" />
+          <label for="Lol">League Of Legends</label>
+        </div>
+
+        <div class="nice-form-group">
+          <input type="radio" name="radio" id="cs" />
+          <label for="cs">Counter:Strike</label>
+        </div>
+
+        <div class="nice-form-group">
+          <input type="radio" name="radio" id="valorant" />
+          <label for="valorant">Valorant</label>
+        </div>
+      </fieldset>
+
+      <div class="nice-form-group">
+        <label>Rank</label>
+        <input
+          type="text"
+          placeholder="SoloQ rank/FaceIt level/neviem co ma valorant"
+        />
+      </div>
+
+      <div class="nice-form-group">
+        <label>Link na učet</label>
+        <input type="text" placeholder="OP.GG/FaceIt/ValorantTracker" />
+      </div>
+
+      <div class="nice-form-group">
+        <label>Povedz nám niečo o sebe</label>
+        <textarea rows="5"></textarea>
+      </div>
+      <div class="nice-form-group">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>

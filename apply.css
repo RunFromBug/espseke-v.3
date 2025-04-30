@@ -1,0 +1,110 @@
+.nice-form-group {
+  margin-bottom: 20px;
+}
+
+.nice-form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.nice-form-group small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.nice-form-group input[type="text"],
+.nice-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.nice-form-group input[type="text"]:focus,
+.nice-form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.nice-form-group textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nice-form-group input[type="radio"] {
+  margin-right: 8px;
+}
+
+.nice-form-group label[for] {
+  font-weight: normal;
+  color: #555;
+}
+.form-container {
+  width: 50%;
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px;
+  box-sizing: border-box;
+}
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+fieldset .nice-form-group {
+  display: inline-flex; /* Arrange radio buttons and labels side by side */
+  align-items: center; /* Align radio buttons and labels vertically */
+  margin-right: 15px; /* Add spacing between options */
+  margin-bottom: 0; /* Remove extra spacing for inline layout */
+}
+
+.nice-form-group input[type="radio"] {
+  margin-right: 5px; /* Space between radio button and label */
+}
+
+.nice-form-group label[for] {
+  font-weight: normal;
+  color: #555;
+}
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:focus {
+  outline: none;
+  background-color: #0056b3;
+}
