@@ -3,6 +3,16 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
 
+    // Check if the user has recently submitted
+    const lastSubmission = getCookie("lastSubmission");
+    const now = Date.now();
+    const throttleTime = 60 * 1000; // 1 minute in milliseconds
+
+    if (lastSubmission && now - lastSubmission < throttleTime) {
+      alert("Formulár môžete odoslať iba raz za minútu.");
+      return;
+    }
+
     const hra = document.querySelector('input[name="radio"]:checked')?.id;
 
     const data = {
@@ -58,6 +68,26 @@ document
       body: JSON.stringify({ data: data }),
     })
       .then((res) => res.json())
-      .then((res) => alert("Úspešne odoslané!"))
+      .then((res) => {
+        alert("Úspešne odoslané!");
+        setCookie("lastSubmission", now, 1); // Set cookie for 1 day
+      })
       .catch((err) => alert("Chyba pri odoslaní formulára."));
   });
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+  for (let i = 0; i < cookies.length; i++) {
+    const [key, value] = cookies[i].split("=");
+    if (key === name) {
+      return parseInt(value, 10);
+    }
+  }
+  return null;
+}
