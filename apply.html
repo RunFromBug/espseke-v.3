@@ -8,6 +8,80 @@
     <link rel="stylesheet" href="apply.css" />
   </head>
   <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .querySelector(".submit-button")
+          .addEventListener("click", async (e) => {
+            e.preventDefault();
+
+            const formData = {
+              meno:
+                document.querySelector('input[placeholder="tvoje krstné meno"]')
+                  ?.value || "",
+              priezvisko:
+                document.querySelector('input[placeholder="tvoje priezvisko"]')
+                  ?.value || "",
+              email:
+                document.querySelector('input[placeholder="tvoj mail"]')
+                  ?.value || "",
+              skola:
+                document.querySelector('input[placeholder="tvoja škola"]')
+                  ?.value || "",
+              rocnik:
+                document.querySelector(
+                  'input[placeholder="ktorý ročník navštevuješ"]'
+                )?.value || "",
+              hra:
+                document.querySelector('input[name="radio"]:checked')?.id || "",
+              rank:
+                document.querySelector(
+                  'input[placeholder="SoloQ rank/FaceIt level/neviem co ma valorant"]'
+                )?.value || "",
+              link:
+                document.querySelector(
+                  'input[placeholder="OP.GG/FaceIt/ValorantTracker"]'
+                )?.value || "",
+              o_sebe: document.querySelector("textarea")?.value || "",
+            };
+
+            // Validate required fields
+            if (
+              !formData.meno ||
+              !formData.priezvisko ||
+              !formData.email ||
+              !formData.skola ||
+              !formData.rocnik ||
+              !formData.hra ||
+              !formData.rank ||
+              !formData.link ||
+              !formData.o_sebe
+            ) {
+              alert("Please fill out all required fields.");
+              return;
+            }
+
+            const scriptURL =
+              "https://script.google.com/macros/s/AKfycbx1v0X2gk4q3b5c8J6G7Qe9Z5Ywz4W1f3a0g7h8/exec";
+            try {
+              const response = await fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: { "Content-Type": "application/json" },
+              });
+
+              if (response.ok) {
+                alert("Form submitted successfully!");
+              } else {
+                alert("Failed to submit the form.");
+              }
+            } catch (error) {
+              console.error("Error:", error);
+              alert("An error occurred.");
+            }
+          });
+      });
+    </script>
     <header>
       <div class="nav">
         <div class="logo"><img src="logo.png" alt="Logo" class="logo" /></div>
@@ -23,34 +97,41 @@
     <div class="form-container">
       <div class="nice-form-group">
         <label>Meno</label>
-        <input type="text" placeholder="tvoje krstné meno" />
+        <input type="text" placeholder="tvoje krstné meno" required />
       </div>
 
       <div class="nice-form-group">
         <label>Priezvisko</label>
-        <small>With additional information below the label</small>
-        <input type="text" placeholder="tvoje priezvisko" />
+        <input type="text" placeholder="tvoje priezvisko" required />
       </div>
 
       <div class="nice-form-group">
-        <label>Trieda</label>
-        <input type="text" placeholder="tvoja trieda" />
+        <label>E-mail</label>
+        <input type="text" placeholder="tvoj mail" required />
       </div>
 
-      <fieldset class="nice-form-group">
+      <div class="nice-form-group">
+        <label>škola</label>
+        <input type="text" placeholder="tvoja škola" required />
+      </div>
+      <div class="nice-form-group">
+        <label>Ročník</label>
+        <input type="text" placeholder="ktorý ročník navštevuješ" required />
+      </div>
+      <fieldset class="nice-form-group" required>
         <legend>Vyber si hru</legend>
         <div class="nice-form-group">
-          <input type="radio" name="radio" id="LoL" />
-          <label for="Lol">League Of Legends</label>
+          <input type="radio" name="radio" id="LoL" required />
+          <label for="LoL">League Of Legends</label>
         </div>
 
         <div class="nice-form-group">
-          <input type="radio" name="radio" id="cs" />
+          <input type="radio" name="radio" id="cs" required />
           <label for="cs">Counter:Strike</label>
         </div>
 
         <div class="nice-form-group">
-          <input type="radio" name="radio" id="valorant" />
+          <input type="radio" name="radio" id="valorant" required />
           <label for="valorant">Valorant</label>
         </div>
       </fieldset>
@@ -60,18 +141,24 @@
         <input
           type="text"
           placeholder="SoloQ rank/FaceIt level/neviem co ma valorant"
+          required
         />
       </div>
 
       <div class="nice-form-group">
         <label>Link na učet</label>
-        <input type="text" placeholder="OP.GG/FaceIt/ValorantTracker" />
+        <input
+          type="text"
+          placeholder="OP.GG/FaceIt/ValorantTracker"
+          required
+        />
       </div>
 
       <div class="nice-form-group">
         <label>Povedz nám niečo o sebe</label>
-        <textarea rows="5"></textarea>
+        <textarea rows="5" required></textarea>
       </div>
+
       <div class="nice-form-group">
         <button type="submit" class="submit-button">Submit</button>
       </div>
