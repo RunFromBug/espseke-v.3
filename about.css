@@ -25,3 +25,59 @@
   height: auto;
   width: 20vw;
 }
+.gaming-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  padding: 100px 7vw;
+  width: 100vw;
+  margin: auto;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.001) 0%,
+    rgba(0, 0, 0, 0.999) 100%
+  );
+}
+
+.gaming-showcase__text-block {
+  width: 50vw;
+}
+
+.gaming-showcase__title {
+  font-size: 7vh;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+  color: white;
+}
+
+.gaming-showcase__subtitle {
+  font-size: 2em;
+  color: #00e699;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+
+.gaming-showcase__description {
+  font-size: 1em;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.gaming-showcase__logos {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 1vw;
+}
+
+.gaming-showcase__logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* optional: makes logos white if SVG or black PNGs */
+  width: 10vw;
+  height: auto;
+}
