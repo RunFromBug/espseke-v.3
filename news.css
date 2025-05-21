@@ -16,16 +16,19 @@ html {
 }
 
 .news-column {
-  width: 95%;
+  width: 95vw;
+  margin-top: 2vh;
+  margin-left:5vw;
   padding: 60px;
   background-color: #ffffff;
   color: #000;
   overflow: visible;
+
 }
 
 .news-column h1 {
   font-size: 48px;
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
 }
 
 .news-card {
@@ -33,7 +36,7 @@ html {
   align-items: center; /* Align items vertically */
   background-color: transparent;
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .news-card h2 {
@@ -47,15 +50,16 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .news-column .news-card:first-child {
-  margin-top: -10vh; /* Adjust the value as needed */
+  margin-top: -15vh; /* Adjust the value as needed */
   position: relative; /* Ensure it doesn't affect other elements */
   z-index: 1; /* Bring it to the front if necessary */
 }
 .page-title {
   position: absolute;
-  top: 0vh;
-  left: 5%;
-  font-size: 98px;
+  top: -1vh;
+  left: 0vh;
+  margin-left: 10vw;
+  font-size: 12vh;
   color: white;
   z-index: 10;
   letter-spacing: 3px;
