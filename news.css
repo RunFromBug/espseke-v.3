@@ -42,20 +42,20 @@ html {
   margin: 0; /* Remove extra margin */
 }
 .news-card img {
-  width: 25vw;
-  height: calc(25vw / 16 * 9);
+  width: calc(25vh / 9*16);
+  height: 25;
   object-fit: cover;
   margin-right: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .news-column .news-card:first-child {
-  margin-top: -12vh; /* Adjust the value as needed */
+  margin-top: -15vh; /* Adjust the value as needed */
   position: relative; /* Ensure it doesn't affect other elements */
   z-index: 1; /* Bring it to the front if necessary */
 }
 .page-title {
   position: absolute;
-  top: -1vh;
+  top: 1vh;
   left: 0vh;
   margin-left: 10vw;
   font-size: 12vh;
