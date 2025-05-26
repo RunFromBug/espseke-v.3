@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Článok 1",
-    "summary": "Krátky popis článku alebo novinky...",
+    "summary": "Krátky popis článku alebo novinky... lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "content": "Celý obsah článku...",
     "image": "placeholder.jpg",
     "tags": ["Game Update", "Event"],
@@ -10,6 +10,42 @@
   },
   {
     "id": 2,
+    "title": "Článok 1",
+    "summary": "Krátky popis článku alebo novinky...",
+    "content": "Celý obsah článku...",
+    "image": "placeholder.jpg",
+    "tags": ["Game Update", "Event"],
+    "date": "2024-06-06"
+  },
+  {
+    "id": 3,
+    "title": "Článok 1",
+    "summary": "Krátky popis článku alebo novinky...",
+    "content": "Celý obsah článku...",
+    "image": "placeholder.jpg",
+    "tags": ["Game Update", "Event"],
+    "date": "2024-06-06"
+  },
+  {
+    "id": 4,
+    "title": "Článok 1",
+    "summary": "Krátky popis článku alebo novinky...",
+    "content": "Celý obsah článku...",
+    "image": "placeholder.jpg",
+    "tags": ["Game Update", "Event"],
+    "date": "2024-06-06"
+  },
+  {
+    "id": 5,
+    "title": "Článok 2",
+    "summary": "Druhý krátky popis...",
+    "content": "Celý obsah druhého článku...",
+    "image": "placeholder.jpg",
+    "tags": ["Event"],
+    "date": "2024-06-05"
+  },
+  {
+    "id": 6,
     "title": "Článok 2",
     "summary": "Druhý krátky popis...",
     "content": "Celý obsah druhého článku...",

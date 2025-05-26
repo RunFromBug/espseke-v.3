@@ -28,38 +28,32 @@
           <!-- Can be empty or have a logo/decoration -->
         </div>
         
-        <div class="news-column">
-          <div class="news-card">
-            <img <img src="404image" onerror="this.src='placeholder.jpg';" />
-            <div class="news-card-content">
-                <h2>Článok 1</h2>
-                <span class="tag game">Game Update</span>
-                <span class="tag">Event</span>
-                <p>Krátky popis článku alebo novinky...</p>
-            </div>
+        <div class="news-column" id="news-list">
+          <!-- News will be loaded here -->
         </div>
-        <div class="news-card">
-            <img <img src="404image" onerror="this.src='placeholder.jpg';" />
-            <div class="news-card-content">
-                <h2>Článok 1</h2>
-                <p>Krátky popis článku alebo novinky...</p>
-            </div>
+        <script>
+fetch('news.json')
+  .then(res => res.json())
+  .then(news => {
+    const container = document.getElementById('news-list');
+    container.innerHTML = news.map(article => 
+      `<div class="news-card">
+        <img src="${article.image}" onerror="this.src='placeholder.jpg';" />
+        <div class="news-card-content">
+          <h2>${article.title}</h2>
+          ${(article.tags || []).map(tag => {
+            let cls = 'tag';
+            if (tag.toLowerCase().includes('event')) cls += ' event';
+            if (tag.toLowerCase().includes('update')) cls += ' update';
+            if (tag.toLowerCase().includes('game')) cls += ' game';
+            return `<span class="${cls}">${tag}</span>`;
+          }).join(' ')}
+          <p>${article.summary}</p>
         </div>
-        <div class="news-card">
-            <img <img src="404image" onerror="this.src='placeholder.jpg';" />
-            <div class="news-card-content">
-                <h2>Článok 1</h2>
-                <p>Krátky popis článku alebo novinky...</p>
-            </div>
-        </div>
-        <div class="news-card">
-            <img <img src="404image" onerror="this.src='placeholder.jpg';" />
-            <div class="news-card-content">
-                <h2>Článok 1</h2>
-                <p>Krátky popis článku alebo novinky...</p>
-            </div>
-        </div>
-        </div>
+      </div>`
+    ).join('');
+  });
+</script>
       </div>
     </section>
     </body>

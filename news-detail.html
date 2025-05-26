@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>News Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tags.css" />
+  </head>
+  <body>
+    <div id="news-detail"></div>
+    <script>
+      // Get id from URL
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      fetch("news.json")
+        .then((res) => res.json())
+        .then((news) => {
+          const article = news.find((n) => n.id == id);
+          if (!article) {
+            document.getElementById("news-detail").innerHTML =
+              "<p>Article not found.</p>";
+            return;
+          }
+          document.getElementById("news-detail").innerHTML = `
+            <h1>${article.title}</h1>
+            <img src="${article.image}" alt="">
+            <div>
+              ${(article.tags || [])
+                .map((tag) => {
+                  let cls = "tag";
+                  if (tag.toLowerCase().includes("event")) cls += " event";
+                  if (tag.toLowerCase().includes("update")) cls += " update";
+                  if (tag.toLowerCase().includes("game")) cls += " game";
+                  return `<span class="${cls}">${tag}</span>`;
+                })
+                .join(" ")}
+            </div>
+            <p>${article.content}</p>
+            <a href="news.html">Back to news</a>
+          `;
+        });
+    </script>
+  </body>
+</html>
