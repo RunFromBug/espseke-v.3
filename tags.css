@@ -1,0 +1,25 @@
+.tags {
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline;
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 4px 10px;
+  margin-right: 6px;
+  font-size: 0.75rem;
+  max-height: 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.tag.event {
+  background-color: #ffd54f;
+}
+.tag.update {
+  background-color: #4fc3f7;
+}
+.tag.game {
+  background-color: #a5d6a7;
+}
