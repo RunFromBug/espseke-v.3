@@ -4,9 +4,9 @@
   @layer demo {
     .carousel {
       --items: 6;
-      --carousel-duration: 40s;
+      --carousel-duration: 20s;
       @media (width > 600px) {
-        --carousel-duration: 30s;
+        --carousel-duration: 20s;
       }
       --carousel-width: min(80vw, 1200px);
       --carousel-item-width: 280px;

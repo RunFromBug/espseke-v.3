@@ -40,6 +40,8 @@ html {
 
 .news-card h2 {
   margin: 0; /* Remove extra margin */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .news-card img {
   width: calc(25vh / 9*16);

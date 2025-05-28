@@ -1,0 +1,506 @@
+ We're back again with another patch, this time with some Brawl balance flavor!
+We’ve got a gameplay update to Garen in this patch that’s aimed at making his fighter builds functional and performant, pushing him away from high burst crit builds. We’ve also got the normal array of balance updates, addressing a few pieces we overshot last patch and generally bringing up the bottom end of the roster.
+Swiftplay Champion Select is getting some nice QoL changes when it comes to picking what you want to play and seeing what runes your teammates are using! On the Behavioral front we have some adjustments coming under the hood that should result in habitual leavers getting a bit harsher punishments, as well as the detection system to be a little bit tighter on higher skill players who know better.
+Switching gears to the Brawl side of things we have a laundry list of balance changes to address what feels like almost every champ in the roster. Some buffs, some adjustments, and some fixes to an interesting strat of killing minions from base because that happened. Check 'em out below!
+Looking for more info on League? Go visit the League of Legends Community Wiki!
+If you're looking for the TFT patch notes you can find them here! 
+Caden "Riot Sakaar" House
+Patch Highlights
+
+The updated Masque of the Black Rose Vladimir, Masque of the Black Rose Samira, Masque of the Black Rose Renata Glasc, and Masque of the Black Rose Elise will be available May 28th, 2025.
+
+Swiftplay Champ Select Improvement
+ Previously, when hovering on teammates' icons in swiftplay lobby, players could not view their keystone rune selected (but could view their champ selected, skin, spells, etc). So in 25.11 we are adding this functionality so players are able to view teammates' keystone runes.
+We're also adding 2 champion sorting filters to the Swiftplay champ select hud so you can easily find your favorite champions a little bit easier/faster. 
+Players are able to sort champions by "mastery" and "favourite".
+Players are now able to view premade teammates' keystone runes.
+Behavioral Systems
+LeaverBuster
+ We're adjusting LeaverBuster's calculations under the hood in order to set a higher bar for what's an acceptable level of AFKing, disconnecting, or leaving matchmade games. The tuning will still allow players who have occasional computer or internet issues to get back into good standing but habitual rage-quitters and consistent disconnectors will receive harsher penalties sooner. 
+In-Game Negative Behavior
+ We're modifying some new rules to our “In Game Negative Behavior” detection system (also known as “Soft Inting”) in order to catch more players who should know better. 
+Reduced the thresholds specifically for higher ranked players to be detected for negative behavior.
+Pride 2025
+ It's our fifth year celebrating Pride month, and the eight year now of sharing the in-game icons, homeguard trails, emotes, and more. For 2025 we have a new free emote, and we're bringing back some of your favorite Pride items from the past. Don't miss out on enjoying this before the event ends with patch 25.13.We have a new Rainbow Warpaint emote that you can claim immediately on the patch going live. No mission or Blue Essence needed. Simply claim it with a single click during the event. We also have a mission that will reward you with some Battle Pass experience for playing 3 games with friends.
+To learn more about the event and how we're celebrating for both League of Legends and TFT check out the article we released on it. 
+Kill & Takedown SFX
+ As mentioned in the Season 2 dev update, Kill & Takedown SFX are here! These sweet sound effects spice up League's most satisfying moments. These will play for your ears only. On multi-kills, the sounds will escalate to serve as your own personal hype squad as you chase that Pentakill. 
+Added Kill & Takedown SFX.
+Misc. adjustments to sound option sliders. The volume of the new SFX can be adjusted with the “Notifications & UI” slider.
+Champions
+
+Aatrox
+Passive damage decreased. Q Sweet Spot damage increased. W damage type changed to physical.
+
+ We'd like Aatrox to feel better about some conventional fighter items like Black Cleaver, and now that we have more levers to tune fighter-vs-lethality builds, we're returning W's damage to physical, which should allow him access to more fighter items like Black Cleaver. He's also the current top dog of top lane, so we're adjusting some of his strengths to make landing Q sweet spots more important for both his damage output and healing. 
+Passive - Deathbringer Stance
+Damage: 4-12% max HP (based on level) ⇒ 4-8% max HP (based on level)
+Q - The Darkin Blade
+Sweet Spot Damage: 160% ⇒ 170%
+W - Infernal Chains
+Damage Type: Magic ⇒ Physical
+
+Annie
+Base Armor increased, Armor Growth decreased. W damage decreased.
+
+ Annie's adjustments have landed well, making her a functional burst mage who relies on her spell hits to deal damage. However, there's still some minor tuning to iron out, largely around her laning phase being a bit too weak and her late game being a bit too strong. These changes are meant to be only lightly power negative overall while giving her a much better early laning phase. 
+Base Stats
+Base Armor (level 1): 19 ⇒ 23
+Armor Growth: 4.7 ⇒ 4
+W - Incinerate
+Damage: 70 / 120 / 170 / 220 / 270 (+ 85% AP) ⇒ 70 / 115 / 160 / 205 / 250 (+ 80% AP)
+
+Ashe
+Q can now build stacks from structure hits.
+
+ Ashe's Q unlike many other marksman's attack passives (see Caitlyn Passive) cannot stack on structures but its damage can affect structures which creates peculiar optimizations - letting her stack this Q on structures should help avoid these unintuitive optimizations and let her feel better about sieging towers in general. 
+Q - Ranger's Focus
+Can now build stacks when attacking structures.
+
+Cho'Gath
+Armor growth decreased.
+
+ Cho'Gath's recent changes made him a bit too strong, so we're tuning down his power slightly. 
+Base Stats
+Armor Growth: 5 ⇒ 4.5
+
+Diana
+Passive monster damage increased.
+
+ After changes to AP itemization, Diana is doing well in mid but struggling in the jungle. We're giving her some extra clear speed to help her keep up now that she isn't leaning on early Fated Ashes. 
+Passive - Moonsilver Blade
+Monster Damage: 225% ⇒ 260%
+
+Elise
+Passive bonus damage decreased.
+
+ Elise has been a beneficiary of the mage items changes, and has been very prominent especially in elite brackets. This change is targeted at softening her clear speed especially when snowballing, and lowering her over time PvP damage. 
+Passive - Spider Queen
+Spider Form Basic Attack Bonus Damage: 12/ 22 / 32 / 42 (based on Spider From's Rank) (+ 20% AP) ⇒ 12/ 22 / 32 / 42 (based on Spider From's Rank) (+ 15% AP)
+
+Garen
+W and E adjusted. R damage decreased.
+
+ We're updating Garen to make his fighter pattern much more functional. The headlining features are a reduced cooldown on Judgment in order to allow him to play out sustained combat and an improved Courage active in order to better soak up damage. As compensation, he's losing a bit of burst damage through critical strike chance on E and overall damage on R. Our hope with these changes is to make fighter builds for Garen his best option and raise their power, as fighter Garen is currently underpowered. 
+W - Courage
+Cooldown: 23 / 21 / 19 / 17 / 15 ⇒ 22 / 19.5 / 17 / 14.5 / 12
+Damage Reduction: 30% ⇒ 25 / 29 / 33 / 37 / 41%
+Removed: 10% bonus resistances after quest completion.
+Fixed a bug where particles weren't playing when successfully mitigating crowd control with the tenacity.
+Tooltip updated for clarity.
+E - Judgment
+Cooldown: 9 ⇒ 9 / 8.25 / 7.5 / 6.75 / 6 (cooldown still starts after the end of the spin)
+Damage: 4 / 8 / 12 / 16 / 20 (+ 0 - 8.2 (based on level)) (+ 36 / 37 / 38 / 39 / 40% AD) ⇒ 4 / 8 / 12 / 16 / 20 (+ 36 / 38 / 40 / 42 / 44% AD)
+Crit Damage Modifier: 150% (190% with Infinity Edge) ⇒ 140% (172% with Infinity Edge)
+Removed: 150% damage to monsters.
+Removed: Partial cooldown refund based on remaining duration.
+Fixed a bug where fully channeled Judgment could leave the cooldown slightly higher than intended.
+Tooltip updated for clarity.
+R - Demacian Justice
+Damage: 150 / 300 / 450 (+ 25 / 30 / 35% missing HP) ⇒ 150 / 250 / 350 (+ 25 / 30 / 35% missing HP)
+
+Kassadin
+Base Armor increased. E damage increased. R damage decreased.
+
+ We are unhappy with the degree of Kassadin's current power curve, as he has been feeling a bit too weak in early game for most players while gaining a massive amount of power if allowed to by the 30 minute mark. Looking to relax his curve some, while still ensuring that players feel like level 16 is a high moment. 
+Base Stats
+Base Armor (Level 1): 19 ⇒ 21
+E - Force Pulse
+Damage: 60 / 90 / 120 / 150 / 180 (+ 65% AP) ⇒ 70 / 100 / 130 / 160 / 190 (+ 65% AP)
+R - Riftwalk
+Bonus Damage per stack: 35 / 45 / 55 (+ 10% AP) (+ 1% maximum mana) ⇒ 35 / 45 / 55 (+ 7% AP) (+ 1% maximum mana)
+Maximum Damage: 210 / 270 / 330 (+ 90% AP) (+ 6% maximum mana) ⇒ 210 / 270 / 330 (+ 78% AP) (+ 6% maximum mana)
+
+Lucian
+E cooldown increased.
+
+ Lucian has been dominating the bot lane for a while now. While he's meant to shine in the early game, he's a little too good at getting himself early advantages. 
+E - Relentless Pursuit
+Cooldown: 16 / 15.5 / 15 / 14.5 / 14 ⇒ 18 / 17 / 16 / 15 / 14
+
+Rengar
+R cooldown decreased.
+
+ Rengar is like a dog chasing cars, except he's a cat chasing ADCs. Problem is, he can't chase as often as he'd like. Despite a low pickrate, he's historically been one of the best Axiom Arc users in the game, indicating his clear desire for hunting more. Giving Rengar a jungle skewed ult CD buff to strengthen his ability to snowball from the jungle. 
+R - Thrill of the Hunt
+Cooldown: 110 / 100 / 90 ⇒ 100 / 90 / 80
+
+Ryze
+W damage decreased. R Passive Overload damage increased.
+
+ Ryze has lost a lot from recent itemization changes, and could use a boost. Giving him some power centered around his level 6 spike to enable him to get out there and make some plays.
+W - Rune Prison
+Damage: 80 / 110 / 140 / 170 / 200 (+ 70% AP) (+ 4% bonus mana) ⇒ 70 / 100 / 130 / 160 / 190 (+ 70% AP) (+ 4% bonus mana)
+R - Realm Warp
+Passive Overload Flux Damage: 40 / 70 / 100% ⇒ 60 / 80 / 100%
+
+Sivir
+W bounce damage increased at lower ranks.
+
+ Sivir scales appropriately well, but is struggling a little too hard early on. Giving her a bit more oomph on earlygame W bounces. 
+W - Ricochet
+Bounce Damage: 30 / 35 / 40 / 45 / 50% AD ⇒ 40 / 42.5 / 45 / 47.5 / 50% AD
+
+Samira
+Q lifesteal effectiveness increased. W damage decreased. R lifesteal effectiveness increased.
+
+ Samira is statistically fine, but she's very sharply dependent upon getting kills in lane and struggles to teamfight without a large lead. We're bumping up her lifesteal synergy in order to enable builds that aren't all about maximum damage and taking a bit away from her burst combo to compensate. 
+Q - Flair
+Lifesteal Effectiveness: 66.66% ⇒ 80%
+W - Blade Whirl
+Damage per hit: 20 / 35 / 50 / 65 / 80 (+ 60% bonus AD) ⇒ 20 / 35 / 50 / 65 / 80 (+ 50% bonus AD)
+R - Inferno Trigger
+Lifesteal Effectiveness: 50% ⇒ 80%
+
+Smolder
+Base Armor and Health Regen decreased.
+
+ Despite being a thematically scale-ing dragon, Smolder's early game is actually quite potent. Peeling back some of his comfort early game by allowing enemy poke to hurt more and stick better. 
+Base Stats
+Base Armor (Level 1): 26 ⇒ 24
+Base Health Regen (Level 1): 4.5 ⇒ 3.75
+
+Twisted Fate
+Q damage increased.
+
+ Twisted Fate has been on the weaker side ever since the RoA changes, and these changes are targeted to help his early game and his wave clear break points. 
+Q - Wild Cards
+Base Damage: 60 / 105 / 150 / 195 / 240 (+ 50% Bonus AD) (+ 85% AP) ⇒ 70 / 115 / 160 / 205 / 250 (+ 50% bonus AD) (+ 85% AP)
+
+Twitch
+E AP Ratio increased.
+
+ AP Twitch has been terribad for a while now. While we really don't want AP Support Twitch, we think there's safe room for a revert of a prior nerf while we are also adjusting AP items, and then possibly a re-assessment sometime down the line. 
+E - Contaminate
+AP Ratio Per Stack: 30% ⇒ 35%
+
+Udyr
+R damage increased.
+
+ Currently, AD Udyr with Q max is having a resurgence while R-centric Udyr builds have fallen significantly behind. We're looking to bring Phoenix Udyr back up to enable him to compete, and particularly looking to reward Udyr for getting his R stance attacks off. 
+R - Wingborne Storm
+Storm Stance Empowered Basic Attack Damage: 10 - 30 (based on level) (+ 30% AP) ⇒ 10 - 40 (based on level) (+ 35% AP)
+Storm Damage per Second: 20 / 34 / 48 / 62 / 76 / 90 (+ 35% AP) ⇒ 20 / 36 / 52 / 68 / 84 / 100 (+ 35% AP)
+Items
+Horizon Focus
+ Horizon Focus's changes succeeded in wooing some new mage users but is overall a little too weak in the average case. We're delivering some direct buffs in order to make sure Horizon is appealing. 
+Total Gold Cost: 2900 ⇒ 2800
+Ability Power: 110 ⇒ 115
+ARAM
+ Hello ARAMers, in this patch, we're taking another look at ADCs to restore some of their late-game damage potential. For mages—particularly Seraphine—we're shifting power toward her damage spells rather than her supportive tools. Sett as well continues to perform strongly, so we're further reducing power from his W, giving opponents more room to react in fights.
+As always, we'd love to hear how you're feeling about the recent direction of removing extra nerfs from champions. We'll keep listening and tuning as we go. GLHF. 
+Champions
+Caitlyn
+Damage Taken: 105% ⇒ 100%
+Janna
+Shielding: 95% ⇒ 100%
+Jhin
+Damage Dealt: 93% ⇒ 95%
+Lux
+Shielding: 80% ⇒ 90%
+Miss Fortune
+Damage Dealt: 93% ⇒ 95%
+Nilah
+Damage Dealt: 97% ⇒ 100%
+Seraphine
+Damage Dealt: 95% ⇒ 100%
+Sett
+W Stored Health: 40% ⇒ 35%
+Singed
+Damage Dealt: 90% ⇒ 95%
+Varus
+Damage Taken: 105% ⇒ 100%
+ARAM Bugfixes
+Fixed a bug where Garen's W tooltip was displaying incorrect numbers.
+Fixed a bug where Shaco's R clone was spawned with an extra VFX.
+Fixed a bug where Snowball was unusable after using Aurora's R to kill a target.
+Brawl
+ We launched Brawl with minimal balance changes in order to understand the mode's balance needs, and we're thrilled to see so many players having a blast in the Bandlewood. We've also seen a lot of requests for champion balance, and we're excited to deliver a major balance update to help ensure that all classes and champions feel viable in Brawl. We released a hotfix shortly after launch to address the most and least powerful champions (notes included further down), and now we're further balancing outlier champions and boosting cooldowns for champions whose numbers didn't make sense in a shorter match. You shouldn't feel like you have to save your ultimate because you can only use it a few times a match, and especially champions with global ultimates don't need such long cooldowns when the map is smaller than Summoner's Rift. 
+Surrender Time and Long Range Minion Extermination
+ Something we observed this past week was a comp who managed to win a game from inside their base. While very funny and something we thought might happen at some point, we figured we should fix it now that it's been found out. We wanted to hold off on adding a bunch of rules immediately to Brawl before seeing what was possible, rather than make a bloated rulebook from the jump. Also it's fun to discover and find these things! We're making some changes to this patch so this should no longer be possible, and we expect these changes to have minimal impact on players who are playing the mode normally.
+We're also adding a change to the surrender timer by setting it to 15 mins. This should provide a failsafe for teams if a game is ever feeling like it's being held hostage long past where a usual Brawl game ends. 
+Surrender Timer: 60:00 ⇒ 15:00
+You now deal greatly reduced damage to minions if you've spent too long in your base. This debuff can be easily removed by leaving your base, but will be reapplied more quickly afterward to prevent abuse.
+Champions
+Aatrox
+Damage Taken: 100% ⇒ 95%
+Akali
+R Cooldown: 120 / 90 / 60 ⇒ 90 / 70 / 50
+Bard
+Chimes per Upgrade: 5 ⇒ 2
+Meep AP Ratio: 40% ⇒ 50%
+Camille
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 140 / 115 / 90 ⇒ 120 / 100 / 80
+Corki
+Damage Dealt: 100% ⇒ 105%
+Evelynn
+R Cooldown: 120 / 100 / 80 ⇒ 100 / 80 / 60
+Fiora
+Damage Taken: 100% ⇒ 95%
+Galio
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+R Cooldown: 180 / 160 / 140 ⇒ 120 / 110 / 100
+Gangplank
+R Cooldown: 170 / 150 / 130 ⇒ 140 / 120 / 100
+Gwen
+Damage Taken: 100% ⇒ 95%
+Hecarim
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+W Cooldown: 14 ⇒ 10
+R Cooldown: 140 / 120 / 100 ⇒ 120 / 105 / 90
+Irelia
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 125 / 105 / 85 ⇒ 100 / 90 / 80
+Jayce
+Damage Taken: 100% ⇒ 95%
+K'Sante
+Damage Taken: 100% ⇒ 95%
+Kalista
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 160 / 140 / 120 ⇒ 100 / 80 / 60
+Karthus
+Damage Dealt: 100% ⇒ 95%
+R Cooldown: 200 / 180 / 160 ⇒ 160 / 140 / 120
+Kindred
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 180 / 150 / 120 ⇒ 120 / 110 / 100
+Lux
+R Cooldown: 60 / 50 / 40 ⇒ 80 / 70 / 60
+Milio
+R Cooldown: 160 / 145 / 130 ⇒ 130 / 115 / 100
+Nidalee
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+Nocturne
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 140 / 115 / 90 ⇒ 120 / 100 / 80
+Nunu & Willump
+Damage Taken: 100% ⇒ 95%
+Pantheon
+R Cooldown: 180 / 165 / 150 ⇒ 120 / 100 / 80
+Qiyana
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+R Cooldown: 120 ⇒ 100 / 85 / 70
+Quinn
+Damage Dealt: 100% ⇒ 105%
+Rek'Sai
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 100 / 90 / 80 ⇒ 60 / 50 / 40
+Renekton
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+R Cooldown: 120 / 100 / 80 ⇒ 100 / 80 / 60
+Rengar
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 110 / 100 / 90 ⇒ 90 / 75 / 60
+Rumble
+Damage Taken: 100% ⇒ 95%
+Ryze
+R Cooldown: 180 / 160 / 140 ⇒ 120 / 100 / 80
+Senna
+AD per Soul: 0.75 ⇒ 1
+Range per 20 Souls: 20 ⇒ 25
+Crit Chance per 20 Souls: 10% ⇒ 12%
+R Cooldown: 140 / 120 / 100 ⇒ 120 / 105 /90
+Shen
+R Cooldown: 200 / 180 / 160 ⇒ 140 / 120 / 100
+Shyvana
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+Bonus Resists per Passive Stack: 2 ⇒ 4
+Dragon Fury Gain per Passive Stack: 0.05 ⇒ 0.1
+Singed
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Soraka
+R Cooldown: 150 / 135 / 120 ⇒ 120 / 110 / 100
+Taliyah
+R Cooldown: 180 / 150 / 120 ⇒ 100 / 80 / 60
+Talon
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+E Cooldown: 160 / 135 / 110 / 85 / 60 ⇒ 10 / 9 / 8 / 7 / 6
+Taric
+R Cooldown: 180 / 150 / 120 ⇒ 140 / 120 / 100
+Tristana
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+Tryndamere
+E Cooldown: 12 / 11 / 10 / 9 / 8 ⇒ 8
+R Cooldown: 120 / 100 / 80 ⇒ 60 / 50 / 40
+Twisted Fate
+R Cooldown: 180 / 150 / 120 ⇒ 120 / 100 / 80
+Veigar
+E Cooldown: 20 / 18.5 / 17 / 15.5 / 14 ⇒ 23 / 21.5 / 20 / 18.5 / 17
+Volibear
+Damage Taken: 100% ⇒ 95%
+R Cooldown: 160 / 135 / 110 ⇒ 120 / 100 / 80
+Warwick
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+E Cooldown: 15 / 14 / 13 / 12 / 11 ⇒ 13 / 12 / 11 / 10 / 9
+Yorick
+R Cooldown: 160 / 130 / 100 ⇒ 80 / 60 / 40
+Zac
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+Zeri
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+25.10 Micropatch Changes (5/16/25)
+ We made some changes after the rollout of Brawl so just documenting these in case you've missed them in game! These are currently live. 
+Akali
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+Annie
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Azir
+Damage Dealt: 100% ⇒ 105%
+Ability Haste: 0 ⇒ 10
+Bard
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 20
+Brand
+Ability Haste: 0 ⇒ -10
+Draven
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 90%
+Evelynn
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 20
+Fiddlesticks
+Damage Dealt: 100% ⇒ 95%
+R Cooldown: 140 / 110 / 80 ⇒ 140 / 130 / 120
+Gangplank
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 20
+Garen
+Damage Taken: 100% ⇒ 90%
+Ability Haste: 0 ⇒ 10
+Hwei
+Ability Haste: 0 ⇒ -10
+Ivern
+Healing: 100% ⇒ 95%
+Shielding: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Jhin
+Damage Dealt: 100% ⇒ 95%
+Jinx
+Damage Dealt: 100% ⇒ 95%
+Kayle
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Kayn
+Assassin Damage Taken: 100% ⇒ 95%
+Assassin Ability Haste: 0 ⇒ 10
+Kog'Maw
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+LeBlanc
+Ability Haste: 0 ⇒ 10
+Lee Sin
+Damage Taken: 100% ⇒ 95%
+Ability Haste: 0 ⇒ 10
+Lucian
+Damage Dealt: 100% ⇒ 105%
+Ability Haste: 0 ⇒ 10
+Lux
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Malzahar
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Maokai
+Ability Haste: 0 ⇒ -10
+Master Yi
+Damage Dealt: 100% ⇒ 95%
+Mel
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Morgana
+Ability Haste: 0 ⇒ -10
+Senna
+Damage Dealt: 100% ⇒ 105%
+Ability Haste: 0 ⇒ 10
+Sett
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Shaco
+Ability Haste: 0 ⇒ -10
+Smolder
+Damage Dealt: 100% ⇒ 95%
+Swain
+Damage Dealt: 100% ⇒ 95%
+Sylas
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+Teemo
+Damage Dealt: 100% ⇒ 95%
+R Cooldown: 35 / 30 / 25 ⇒ 40 / 35 / 30
+Tryndamere
+Damage Dealt: 100% ⇒ 105%
+Damage Taken: 100% ⇒ 95%
+Veigar
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Xerath
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Ziggs
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Zyra
+Damage Dealt: 100% ⇒ 95%
+Ability Haste: 0 ⇒ -10
+Bugfixes & QoL Changes
+QoL Changes
+Pyke's E Phantom charge up and dash sound effects now follow the positioning of the phantom.
+Pyke now has a new passive heal loop sound effect.
+Made Akali's Q more consistent when aiming in different directions.
+Bugfixes
+Fixed self only Pyke R cast audio positioning for several Pyke skins.
+Fixed an issue where Fiddlesticks's Q could not be applied again to the same target as soon as it came off cooldown.
+Fixed an issue where Naafiri's Passive dogs could run around the map globally. This did prompt us to ask “What da dawgs doin?”
+Fixed an issue where Naafiri's R would not be blocked by Azir's R.
+Fixed an issue where champions under… weird… circumstances could gain an infinite amount of XP. (Yes we saw the video too)
+Fixed an issue where the Death Spectate feature was not available in Practice Tool, Swiftplay, and certain game modes.
+Fixed an issue where the Rift Herald would sometimes walk to the closest enemy structure and charge at it after failing to hit anything from the controlled charge.
+Fixed an issue where Sixth Sense could trigger while dead. We didn't see this twist coming either.
+Fixed an issue where Nimbus Cloak wouldn't activate after a long teleport.
+Fixed an issue where chat pings could show an incorrect bounty instead of the actual bounty on the scoreboard.
+Fixed an issue where some champions' Critical Strikes could go through Blind.
+Fixed an issue where the Rift Herald could auto charge through terrain but not damage the tower. Rift Herald will now respect all walls, even ones you make.
+Fixed an issue where Kraken Slayer would create a redundant debuff icon.
+Fixed an issue where if a dead player disconnected and reconnected the Death Screen UI would be invisible.
+Fixed an issue where Yasuo would do excessive damage to K'Sante when he is in his R and has Aftershock.
+Fixed an issue where if Vi had Guardian Angel and was killed during her R the R would not be interrupted.
+Fixed an issue where Sion's Q and Briar's E could be cancelled by attack moves.
+Fixed an issue where you could ignore the ARAM Low Priority Queue after AFKing and remaking the game.
+Fixed an issue where the ghostly outline of Pyke's W would fail to appear when damage was taken while camouflaged.
+Fixed an issue where Kled could be executed by Collector while mounted if the killing blow would exceed his total combined HP.
+Fixed an issue where Zilean's second Q timer on the same target wouldn't have a countdown SFX.
+Fixed an issue where Mordekaiser's Q would cast toward the mouse location and not the direction he's facing if he's displaced.
+Skin Updates
+ This patch we decided to go back and deliver some meaningful updates to the Black Rose skins that were released earlier this year. We wanted to make these feel a bit more exciting to use and hope you enjoy these updates! 
+Masque of the Black Rose Vladimir
+Model and texture updates.
+VFX kit updated with more of that Black Rose flavor.
+Now using the new Vlad recall.
+Masque of the Black Rose Samira
+Model and texture updates.
+VFX kit updated with more of that Black Rose flavor.
+Masque of the Black Rose Renata Glasc
+Model and texture updates.
+VFX kit updated with more of that Black Rose flavor.
+Masque of the Black Rose Elise
+Model and texture updates.
+Entirely new VFX as it previously was just using her base VFX kit (also full of Black Rose flavor).

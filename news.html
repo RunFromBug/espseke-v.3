@@ -38,7 +38,9 @@ fetch('news.json')
     const container = document.getElementById('news-list');
     container.innerHTML = news.map(article => 
       `<div class="news-card">
+        <a href="news-detail.html?id=${article.id}">
         <img src="${article.image}" onerror="this.src='placeholder.jpg';" />
+        </a>
         <div class="news-card-content">
           <h2>${article.title}</h2>
           ${(article.tags || []).map(tag => {
@@ -46,6 +48,9 @@ fetch('news.json')
             if (tag.toLowerCase().includes('event')) cls += ' event';
             if (tag.toLowerCase().includes('update')) cls += ' update';
             if (tag.toLowerCase().includes('game')) cls += ' game';
+            if (tag.toLowerCase().includes('valorant')) cls += ' valorant';
+            if (tag.toLowerCase().includes('csgo')) cls += ' csgo';
+            if (tag.toLowerCase().includes('league')) cls += ' league';
             return `<span class="${cls}">${tag}</span>`;
           }).join(' ')}
           <p>${article.summary}</p>

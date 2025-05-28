@@ -7,9 +7,8 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  gap: 0px;
 }
 #obrazky img {
   margin: 0 7.5vw; /* Add horizontal spacing between images */
@@ -18,12 +17,12 @@
   margin: 7vw;
 }
 #title {
-  width: 50vw;
+  width: 45vw;
   height: auto;
 }
 #cifer {
   height: auto;
-  width: 20vw;
+  width: 55vw;
 }
 .gaming-showcase {
   display: flex;

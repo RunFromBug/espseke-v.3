@@ -5,8 +5,19 @@
     <title>News Detail</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="tags.css" />
+    <link rel="stylesheet" href="news-detail.css">
   </head>
   <body>
+    <header>
+      <div class="nav">
+        <div class="logo"><img src="logo.png" alt="Logo" class="logo" /></div>
+        <nav class="menu">
+          <a href="index.html">About</a>
+          <a href="apply.html">Apply</a>
+          <a href="news.html" class="active">News</a>
+        </nav>
+      </div>
+    </header>
     <div id="news-detail"></div>
     <script>
       // Get id from URL
@@ -22,23 +33,36 @@
               "<p>Article not found.</p>";
             return;
           }
-          document.getElementById("news-detail").innerHTML = `
-            <h1>${article.title}</h1>
-            <img src="${article.image}" alt="">
-            <div>
-              ${(article.tags || [])
-                .map((tag) => {
-                  let cls = "tag";
-                  if (tag.toLowerCase().includes("event")) cls += " event";
-                  if (tag.toLowerCase().includes("update")) cls += " update";
-                  if (tag.toLowerCase().includes("game")) cls += " game";
-                  return `<span class="${cls}">${tag}</span>`;
-                })
-                .join(" ")}
-            </div>
-            <p>${article.content}</p>
-            <a href="news.html">Back to news</a>
-          `;
+
+          // Helper to render the article
+          function renderArticle(content) {
+            document.getElementById("news-detail").innerHTML = `
+              <h1>${article.title}</h1>
+              <img src="${article.image}" alt="">
+              <div>
+                ${(article.tags || [])
+                  .map((tag) => {
+                    let cls = "tag";
+                    if (tag.toLowerCase().includes("event")) cls += " event";
+                    if (tag.toLowerCase().includes("update")) cls += " update";
+                    if (tag.toLowerCase().includes("game")) cls += " game";
+                    return `<span class="${cls}">${tag}</span>`;
+                  })
+                  .join(" ")}
+              </div>
+              <p>${content.replace(/\n/g, "<br>")}</p>
+              <a href="news.html">Back to news</a>
+            `;
+          }
+
+          // If contentFile exists, fetch the txt file
+          if (article.contentFile) {
+            fetch(article.contentFile)
+              .then((res) => res.text())
+              .then((text) => renderArticle(text));
+          } else {
+            renderArticle(article.content || "");
+          }
         });
     </script>
   </body>

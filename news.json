@@ -3,63 +3,18 @@
     "id": 1,
     "title": "Nový league of legends patch",
     "summary": "elise nerfs 😔 ",
-    "content": "",
+    "contentFile":"news/28.5-lolpatch.txt",
     "image": "patch 28.5..jpg",
     "tags": ["Update", "league"],
-    "date": "2024-06-06"
+    "date": "28-5-2024"
   },
   {
     "id": 2,
-    "title": "Článok 1",
-    "summary": "Krátky popis článku alebo novinky...",
-    "content": "Celý obsah článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Update", "Event"],
-    "date": "2024-06-06"
-  },
-  {
-    "id": 3,
-    "title": "Článok 1",
-    "summary": "Krátky popis článku alebo novinky...",
-    "content": "Celý obsah článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Game Update", "Event", "Amogus"],
-    "date": "2024-06-06"
-  },
-  {
-    "id": 7,
-    "title": "Článok 4",
-    "summary": "Krátky popis článku alebo novinky...",
-    "content": "Celý obsah článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Game Update", "Event"],
-    "date": "2024-06-06"
-  },
-  {
-    "id": 4,
-    "title": "Článok 5",
-    "summary": "Krátky popis článku alebo novinky...",
-    "content": "Celý obsah článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Game Update", "Event"],
-    "date": "2024-06-06"
-  },
-  {
-    "id": 5,
-    "title": "Článok 6",
-    "summary": "Druhý krátky popis...",
-    "content": "Celý obsah druhého článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Event"],
-    "date": "2024-06-05"
-  },
-  {
-    "id": 6,
-    "title": "Článok 7",
-    "summary": "Druhý krátky popis...",
-    "content": "Celý obsah druhého článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Event"],
-    "date": "2024-06-05"
+    "title": "Nový patch pro Valorant",
+    "summary": "zmeny agentov",
+    "contentFile":"news/27.5.-valorantpatch.txt",
+    "image": "valorant patch 27.5.webp",
+    "tags": ["Update", "Valorant"],
+    "date": "27-5-2024"
   }
 ]
