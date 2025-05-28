@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Článok 1",
-    "summary": "Krátky popis článku alebo novinky... lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "content": "Celý obsah článku...",
-    "image": "placeholder.jpg",
-    "tags": ["Game Update", "Event"],
+    "title": "Nový league of legends patch",
+    "summary": "elise nerfs 😔 ",
+    "content": "",
+    "image": "patch 28.5..jpg",
+    "tags": ["Update", "league"],
     "date": "2024-06-06"
   },
   {
@@ -14,7 +14,7 @@
     "summary": "Krátky popis článku alebo novinky...",
     "content": "Celý obsah článku...",
     "image": "placeholder.jpg",
-    "tags": ["Game Update", "Event"],
+    "tags": ["Update", "Event"],
     "date": "2024-06-06"
   },
   {
@@ -23,12 +23,21 @@
     "summary": "Krátky popis článku alebo novinky...",
     "content": "Celý obsah článku...",
     "image": "placeholder.jpg",
+    "tags": ["Game Update", "Event", "Amogus"],
+    "date": "2024-06-06"
+  },
+  {
+    "id": 7,
+    "title": "Článok 4",
+    "summary": "Krátky popis článku alebo novinky...",
+    "content": "Celý obsah článku...",
+    "image": "placeholder.jpg",
     "tags": ["Game Update", "Event"],
     "date": "2024-06-06"
   },
   {
     "id": 4,
-    "title": "Článok 1",
+    "title": "Článok 5",
     "summary": "Krátky popis článku alebo novinky...",
     "content": "Celý obsah článku...",
     "image": "placeholder.jpg",
@@ -37,7 +46,7 @@
   },
   {
     "id": 5,
-    "title": "Článok 2",
+    "title": "Článok 6",
     "summary": "Druhý krátky popis...",
     "content": "Celý obsah druhého článku...",
     "image": "placeholder.jpg",
@@ -46,7 +55,7 @@
   },
   {
     "id": 6,
-    "title": "Článok 2",
+    "title": "Článok 7",
     "summary": "Druhý krátky popis...",
     "content": "Celý obsah druhého článku...",
     "image": "placeholder.jpg",

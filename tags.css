@@ -18,8 +18,11 @@
   background-color: #ffd54f;
 }
 .tag.update {
-  background-color: #4fc3f7;
-}
-.tag.game {
   background-color: #a5d6a7;
+}
+.tag.Amogus{
+  background-color: red;
+}
+.tag.league{
+  background-color: #0756c4;
 }

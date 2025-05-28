@@ -81,7 +81,8 @@ fetch('news.json')
             let cls = 'tag';
             if (tag.toLowerCase().includes('event')) cls += ' event';
             if (tag.toLowerCase().includes('update')) cls += ' update';
-            if (tag.toLowerCase().includes('game')) cls += ' game';
+            if (tag.toLowerCase().includes('amogus')) cls += ' Amogus';
+            if (tag.toLowerCase().includes('league')) cls += ' league';
             return `<span class="${cls}">${tag}</span>`;
           }).join(' ')}
         </div>
@@ -92,7 +93,7 @@ fetch('news.json')
       </article>`
     ).join('');
   });
-</script
+</script>
       </div>
     </section>
   </body>
