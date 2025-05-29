@@ -32,45 +32,33 @@
             <!-- News will be loaded here -->
           </div>
           <script>
-fetch('http://127.0.0.1/index.php/v1/content/articles?limit=6', {
-  headers: {
-    'Authorization': 'c2hhMjU2Ojg1OTo3ODhmMjdlMmQxNTMwYjc4NjViNDhhZWZlNzBjYzQ5MTY0NWE0OGNkN2NhNjA5YjAzZGYzOTRlNmUzODc0ZGQ4'
-  }
-})
-  .then(res => res.json())
-  .then(data => {
-    const latest = data.data; // Joomla returns articles under `data`
-
-    const container = document.getElementById('carousel-news');
-    container.innerHTML = latest.map(article => {
-      const image = article.images?.image_intro || 'placeholder.jpg';
-      const title = article.title;
-      const id = article.id;
-      const summary = article.introtext?.replace(/<[^>]*>/g, '').slice(0, 150) + '...';
-      const tags = (article.tags || []).map(t => t.title); // may need to enable tags in API
-
-      return `
-        <article>
-          <img src="${image}" alt="">
-          <h2>${title}</h2>
-          <div class="carousel-tags">
-            ${tags.map(tag => {
+  fetch('news.json')
+    .then(res => res.json())
+    .then(news => {
+      const container = document.getElementById('news-list');
+      container.innerHTML = news.map(article => 
+        `<div class="news-card">
+          <a href="news-detail.html?id=${article.id}">
+          <img src="${article.image}" onerror="this.src='placeholder.jpg';" />
+          </a>
+          <div class="news-card-content">
+            <h2>${article.title}</h2>
+            ${(article.tags || []).map(tag => {
               let cls = 'tag';
               if (tag.toLowerCase().includes('event')) cls += ' event';
               if (tag.toLowerCase().includes('update')) cls += ' update';
               if (tag.toLowerCase().includes('game')) cls += ' game';
+              if (tag.toLowerCase().includes('valorant')) cls += ' valorant';
+              if (tag.toLowerCase().includes('csgo')) cls += ' csgo';
+              if (tag.toLowerCase().includes('league')) cls += ' league';
               return `<span class="${cls}">${tag}</span>`;
             }).join(' ')}
+            <p>${article.summary}</p>
           </div>
-          <div class="carousel-content">
-            <p>${summary}</p>
-            <a href="news-detail.html?id=${id}">Read more</a>
-          </div>
-        </article>
-      `;
-    }).join('');
-  });
-</script>
+        </div>`
+      ).join('');
+    });
+  </script>
         </div>
       </section>
       </body>
