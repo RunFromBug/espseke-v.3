@@ -32,7 +32,11 @@
             <!-- News will be loaded here -->
           </div>
           <script>
-fetch('http://localhost/joomla/api/index.php/v1/content/articles')
+fetch('/joomla/api/index.php/v1/content/articles', {
+  headers: {
+    'Authorization': 'c2hhMjU2Ojg1OTo3ODhmMjdlMmQxNTMwYjc4NjViNDhhZWZlNzBjYzQ5MTY0NWE0OGNkN2NhNjA5YjAzZGYzOTRlNmUzODc0ZGQ4'
+  }
+})
   .then(res => {
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
