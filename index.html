@@ -66,11 +66,27 @@
     <section id="latest_news">
       <div class="carousel" mask id="carousel-news">
         <script>
-fetch('news.json')
+fetch('http://localhost:1337/api/articles?populate=cover&sort=createdAt:desc')
   .then(res => res.json())
-  .then(news => {
-    // Take the first 6 items as they appear in the JSON
+  .then(json => {
+    const baseUrl = 'http://localhost:1337';
+    const news = json.data.map(item => {
+      const cover = item.cover || {};
+      const coverUrl = cover.url ? baseUrl + cover.url : 'placeholder.jpg';
+      const mediumCoverUrl = cover.formats?.medium?.url ? baseUrl + cover.formats.medium.url : coverUrl;
+
+      return {
+        id: item.id,
+        title: item.Title || 'No title',
+        summary: item.summary || '',
+        tags: Array.isArray(item.tags?.tags) ? item.tags.tags : [],
+        image: mediumCoverUrl
+      };
+    });
+
+    // Take first 6 articles as they come (newest first because of sort)
     const latest = news.slice(0, 6);
+
     const container = document.getElementById('carousel-news');
     container.innerHTML = latest.map(article => 
       `<article>
@@ -92,7 +108,11 @@ fetch('news.json')
         </div>
       </article>`
     ).join('');
+  })
+  .catch(err => {
+    console.error('Error fetching articles:', err);
   });
+
 </script>
       </div>
     </section>

@@ -20,50 +20,49 @@
     </header>
     <div id="news-detail"></div>
     <script>
-      // Get id from URL
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
+  const params = new URLSearchParams(window.location.search);
+const documentId = params.get('id');
 
-      fetch("news.json")
-        .then((res) => res.json())
-        .then((news) => {
-          const article = news.find((n) => n.id == id);
-          if (!article) {
-            document.getElementById("news-detail").innerHTML =
-              "<p>Article not found.</p>";
-            return;
-          }
+fetch(`http://localhost:1337/api/articles/${documentId}?populate=cover`)
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    return res.json();
+  })
+  .then(json => {
+    const article = json.data;
+    if (!article) {
+      document.getElementById('news-detail').innerHTML = `<p>Article not found.</p>`;
+      return;
+    }
 
-          // Helper to render the article
-          function renderArticle(content) {
-            document.getElementById("news-detail").innerHTML = `
-              <h1>${article.title}</h1>
-              <img src="${article.image}" alt="">
-              <div>
-                ${(article.tags || [])
-                  .map((tag) => {
-                    let cls = "tag";
-                    if (tag.toLowerCase().includes("event")) cls += " event";
-                    if (tag.toLowerCase().includes("update")) cls += " update";
-                    if (tag.toLowerCase().includes("game")) cls += " game";
-                    return `<span class="${cls}">${tag}</span>`;
-                  })
-                  .join(" ")}
-              </div>
-              <p>${content.replace(/\n/g, "<br>")}</p>
-              <a href="news.html">Back to news</a>
-            `;
-          }
+    const cover = article.cover || {};
+    const baseUrl = 'http://localhost:1337';
+    const coverUrl = cover.formats?.medium?.url
+      ? baseUrl + cover.formats.medium.url
+      : baseUrl + (cover.url || '');
 
-          // If contentFile exists, fetch the txt file
-          if (article.contentFile) {
-            fetch(article.contentFile)
-              .then((res) => res.text())
-              .then((text) => renderArticle(text));
-          } else {
-            renderArticle(article.content || "");
-          }
-        });
-    </script>
+    const fulltext = article.fulltext
+      ? article.fulltext.map(block => {
+          // Assuming fulltext is an array of blocks with children containing text
+          return block.children.map(child => child.text).join('');
+        }).join('<br>')
+      : '';
+
+    document.getElementById('news-detail').innerHTML = `
+      <h1>${article.Title}</h1>
+      <img src="${coverUrl}" alt="${cover.alternativeText || 'Article cover image'}" />
+      <div>
+        ${(article.tags?.tags || []).map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+      </div>
+      <p>${fulltext}</p>
+      <a href="news.html">Back to news</a>
+    `;
+  })
+  .catch(err => {
+    document.getElementById('news-detail').innerHTML = `<p>Error loading article: ${err.message}</p>`;
+    console.error(err);
+  });
+  
+</script>
   </body>
 </html>
