@@ -32,46 +32,43 @@
             <!-- News will be loaded here -->
           </div>
           <script>
-fetch('http://127.0.0.1/joomla/api/index.php/v1/content/articles', {
+fetch('https://127.0.0.1/index.php/v1/content/articles?limit=6', {
   headers: {
-    'Authorization': 'Basic YmFtYmkxNTpjMmhoTWpVMk9qZzFPVG8zT0RobU1qZGxNbVF4TlRNd1lqYzROalZpTkRoaFpXWmxOekJqWXpRNU1UWTBOV0UwT0dOa04yTmhOakE1WWpBelpHWXpPVFJsTm1Vek9EYzBaR1E0'
+    'Authorization': 'c2hhMjU2Ojg1OTo3ODhmMjdlMmQxNTMwYjc4NjViNDhhZWZlNzBjYzQ5MTY0NWE0OGNkN2NhNjA5YjAzZGYzOTRlNmUzODc0ZGQ4'
   }
 })
-  .then(res => {
-    if (!res.ok) {
-      throw new Error(`HTTP error! Status: ${res.status}`);
-    }
-    return res.json();
-  })
-  .then(response => {
-    const news = response.data;
-    const container = document.getElementById('news-list');
-    container.innerHTML = news.map(article =>
-      `<div class="news-card">
-        <a href="news-detail.html?id=${article.id}">
-          <img src="${article.images?.image_intro || 'placeholder.jpg'}" onerror="this.src='placeholder.jpg';" />
-        </a>
-        <div class="news-card-content">
-          <h2>${article.title}</h2>
-          ${(article.tags || []).map(tag => {
-            let cls = 'tag';
-            const t = tag.title.toLowerCase();
-            if (t.includes('event')) cls += ' event';
-            if (t.includes('update')) cls += ' update';
-            if (t.includes('game')) cls += ' game';
-            if (t.includes('valorant')) cls += ' valorant';
-            if (t.includes('csgo')) cls += ' csgo';
-            if (t.includes('league')) cls += ' league';
-            return `<span class="${cls}">${tag.title}</span>`;
-          }).join(' ')}
-          <p>${article.introtext}</p>
-        </div>
-      </div>`
-    ).join('');
-  })
-  .catch(error => {
-    console.error("Failed to fetch articles:", error);
-    document.getElementById('news-list').innerHTML = "<p>Chyba pri načítaní noviniek.</p>";
+  .then(res => res.json())
+  .then(data => {
+    const latest = data.data; // Joomla returns articles under `data`
+
+    const container = document.getElementById('carousel-news');
+    container.innerHTML = latest.map(article => {
+      const image = article.images?.image_intro || 'placeholder.jpg';
+      const title = article.title;
+      const id = article.id;
+      const summary = article.introtext?.replace(/<[^>]*>/g, '').slice(0, 150) + '...';
+      const tags = (article.tags || []).map(t => t.title); // may need to enable tags in API
+
+      return `
+        <article>
+          <img src="${image}" alt="">
+          <h2>${title}</h2>
+          <div class="carousel-tags">
+            ${tags.map(tag => {
+              let cls = 'tag';
+              if (tag.toLowerCase().includes('event')) cls += ' event';
+              if (tag.toLowerCase().includes('update')) cls += ' update';
+              if (tag.toLowerCase().includes('game')) cls += ' game';
+              return `<span class="${cls}">${tag}</span>`;
+            }).join(' ')}
+          </div>
+          <div class="carousel-content">
+            <p>${summary}</p>
+            <a href="news-detail.html?id=${id}">Read more</a>
+          </div>
+        </article>
+      `;
+    }).join('');
   });
 </script>
         </div>
