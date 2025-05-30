@@ -93,3 +93,18 @@
   object-fit: cover;
   margin-left: 2vw;
 }
+#instagram{
+background-color: black;
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#instagram-header{
+  height: 0px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );  
+}

@@ -31,62 +31,51 @@
           <div class="news-column" id="news-list">
             <!-- News will be loaded here -->
           </div>
-          <script>
-fetch('http://localhost:1337/api/articles?populate=cover&sort=createdAt:desc')
+<script>
+fetch('http://localhost:3000/api/news')
   .then(res => res.json())
   .then(json => {
-    const news = json.data.map(item => {
-      // Base URL for images
-      const baseUrl = 'http://localhost:1337';
-
-      // Cover image fallback logic
-      const cover = item.cover || {};
-      const coverUrl = cover.url ? baseUrl + cover.url : 'placeholder.jpg';
-
-      // Optional: use medium size if available
-      const mediumCoverUrl = cover.formats?.medium?.url ? baseUrl + cover.formats.medium.url : coverUrl;
-
-      const altText = cover.alternativeText || 'Article cover image';
-
-      return {
-        id: item.id,
-        documentId: item.documentId || '',
-        title: item.Title || 'No title',
-        summary: item.summary || '',
-        tags: Array.isArray(item.tags?.tags) ? item.tags.tags : [],
-        image: mediumCoverUrl,
-        altText
-      };
-    });
+    const news = json.data; // array of articles
 
     const container = document.getElementById('news-list');
-    container.innerHTML = news.map(article =>
-      `<div class="news-card">
-        <a href="news-detail.html?id=${article.documentId}">
-          <img src="${article.image}" alt="${article.altText}" onerror="this.src='placeholder.jpg';" />
-        </a>
-        <div class="news-card-content">
-          <h2>${article.title}</h2>
-          ${(article.tags || []).map(tag => {
-            let cls = 'tag';
-            if (tag.toLowerCase().includes('event')) cls += ' event';
-            if (tag.toLowerCase().includes('update')) cls += ' update';
-            if (tag.toLowerCase().includes('game')) cls += ' game';
-            if (tag.toLowerCase().includes('valorant')) cls += ' valorant';
-            if (tag.toLowerCase().includes('csgo')) cls += ' csgo';
-            if (tag.toLowerCase().includes('league')) cls += ' league';
-            return `<span class="${cls}">${tag}</span>`;
-          }).join(' ')}
-          <p>${article.summary}</p>
+    container.innerHTML = news.map(article => {
+      // Build image URL similarly to your working script
+      const imageUrl = 'http://localhost:1337' + (article.cover?.formats?.medium?.url || article.cover?.url || '/placeholder.jpg');
+      
+      // Tags fallback
+      const tags = Array.isArray(article.tags?.tags) ? article.tags.tags : [];
+
+      return `
+        <div class="news-card">
+          <a href="news-detail.html?id=${article.documentId}">
+            <img src="${imageUrl}" alt="${article.cover?.alternativeText || 'Article cover image'}" onerror="this.src='placeholder.jpg';" />
+          </a>
+          <div class="news-card-content">
+            <h2>${article.Title || 'No title'}</h2>
+            <div class="tags">
+              ${tags.map(tag => {
+                let cls = 'tag';
+                if (tag.toLowerCase().includes('event')) cls += ' event';
+                if (tag.toLowerCase().includes('update')) cls += ' update';
+                if (tag.toLowerCase().includes('game')) cls += ' game';
+                if (tag.toLowerCase().includes('valorant')) cls += ' valorant';
+                if (tag.toLowerCase().includes('csgo')) cls += ' csgo';
+                if (tag.toLowerCase().includes('league')) cls += ' league';
+                return `<span class="${cls}">${tag}</span>`;
+              }).join(' ')}
+            </div>
+            <p>${article.summary || ''}</p>
+          </div>
         </div>
-      </div>`
-    ).join('');
+      `;
+    }).join('');
   })
   .catch(err => {
     console.error('Error fetching articles:', err);
   });
 
-  </script>
+</script>
+
         </div>
       </section>
       </body>

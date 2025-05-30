@@ -60,7 +60,7 @@ document
       return;
     }
 
-    fetch("https://sheetdb.io/api/v1/67kd5sfcubfrs", {
+    fetch("http://localhost:3000/api/submit-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
