@@ -62,7 +62,6 @@ html {
 }
 body {
   backdrop-filter: blur(20px); /* <--- This applies the blur */
-  height: 100vh; /* Full viewport height */
   width: 100vw;
 }
 header {
