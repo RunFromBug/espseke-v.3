@@ -5,7 +5,7 @@
     <title>News Detail</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="tags.css" />
-    <link rel="stylesheet" href="news-detail.css">
+    <link rel="stylesheet" href="news-detail.css" />
   </head>
   <body>
     <header>
@@ -20,49 +20,60 @@
     </header>
     <div id="news-detail"></div>
     <script>
-  const params = new URLSearchParams(window.location.search);
-const documentId = params.get('id');
+      const params = new URLSearchParams(window.location.search);
+      const documentId = params.get("id");
 
-fetch(`http://localhost:1337/api/articles/${documentId}?populate=cover`)
-  .then(res => {
-    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-    return res.json();
-  })
-  .then(json => {
-    const article = json.data;
-    if (!article) {
-      document.getElementById('news-detail').innerHTML = `<p>Article not found.</p>`;
-      return;
-    }
+      fetch(
+        `http://100.68.218.117:1337/api/articles/${documentId}?populate=cover`
+      )
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          return res.json();
+        })
+        .then((json) => {
+          const article = json.data;
+          if (!article) {
+            document.getElementById(
+              "news-detail"
+            ).innerHTML = `<p>Article not found.</p>`;
+            return;
+          }
 
-    const cover = article.cover || {};
-    const baseUrl = 'http://localhost:1337';
-    const coverUrl = cover.formats?.medium?.url
-      ? baseUrl + cover.formats.medium.url
-      : baseUrl + (cover.url || '');
+          const cover = article.cover || {};
+          const baseUrl = "http://100.68.218.117:1337";
+          const coverUrl = cover.formats?.medium?.url
+            ? baseUrl + cover.formats.medium.url
+            : baseUrl + (cover.url || "");
 
-    const fulltext = article.fulltext
-      ? article.fulltext.map(block => {
-          // Assuming fulltext is an array of blocks with children containing text
-          return block.children.map(child => child.text).join('');
-        }).join('<br>')
-      : '';
+          const fulltext = article.fulltext
+            ? article.fulltext
+                .map((block) => {
+                  // Assuming fulltext is an array of blocks with children containing text
+                  return block.children.map((child) => child.text).join("");
+                })
+                .join("<br>")
+            : "";
 
-    document.getElementById('news-detail').innerHTML = `
+          document.getElementById("news-detail").innerHTML = `
       <h1>${article.Title}</h1>
-      <img src="${coverUrl}" alt="${cover.alternativeText || 'Article cover image'}" />
+      <img src="${coverUrl}" alt="${
+            cover.alternativeText || "Article cover image"
+          }" />
       <div>
-        ${(article.tags?.tags || []).map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+        ${(article.tags?.tags || [])
+          .map((tag) => `<span class="tag">${tag}</span>`)
+          .join(" ")}
       </div>
       <p>${fulltext}</p>
       <a href="news.html">Back to news</a>
     `;
-  })
-  .catch(err => {
-    document.getElementById('news-detail').innerHTML = `<p>Error loading article: ${err.message}</p>`;
-    console.error(err);
-  });
-  
-</script>
+        })
+        .catch((err) => {
+          document.getElementById(
+            "news-detail"
+          ).innerHTML = `<p>Error loading article: ${err.message}</p>`;
+          console.error(err);
+        });
+    </script>
   </body>
 </html>

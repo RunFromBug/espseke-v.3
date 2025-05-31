@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Nový league of legends patch",
     "summary": "elise nerfs 😔 ",
-    "contentFile":"news/28.5-lolpatch.txt",
+    "contentFile": "news/28.5-lolpatch.txt",
     "image": "patch 28.5..jpg",
     "tags": ["Update", "league"],
     "date": "28-5-2024"
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Nový patch pro Valorant",
     "summary": "zmeny agentov",
-    "contentFile":"news/27.5.-valorantpatch.txt",
+    "contentFile": "news/27.5.-valorantpatch.txt",
     "image": "valorant patch 27.5.webp",
     "tags": ["Update", "Valorant"],
     "date": "27-5-2024"

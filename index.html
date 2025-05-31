@@ -66,33 +66,42 @@
     <section id="latest_news">
       <div class="carousel" mask id="carousel-news">
         <script>
-fetch('http://localhost:3000/api/news')
-  .then(res => res.json())
-  .then(data => {
-    // Extract the array of articles from the response
-    const news = data.data;
+          fetch("http://100.68.218.117:3000/api/news")
+            .then((res) => res.json())
+            .then((data) => {
+              // Extract the array of articles from the response
+              const news = data.data;
 
-    // Take the first 6 articles (newest first)
-    const latest = news.slice(0, 6);
+              // Take the first 6 articles (newest first)
+              const latest = news.slice(0, 6);
 
-    const container = document.getElementById('carousel-news');
-    container.innerHTML = latest.map(article => {
-      const imageUrl = 'http://localhost:1337' + (article.cover?.formats?.medium?.url || article.cover?.url || '/placeholder.jpg');
-      const tags = Array.isArray(article.tags?.tags) ? article.tags.tags : [];
+              const container = document.getElementById("carousel-news");
+              container.innerHTML = latest
+                .map((article) => {
+                  const imageUrl =
+                    "http://100.68.218.117:1337" +
+                    (article.cover?.formats?.medium?.url ||
+                      article.cover?.url ||
+                      "/placeholder.jpg");
+                  const tags = Array.isArray(article.tags?.tags)
+                    ? article.tags.tags
+                    : [];
 
-      return `
+                  return `
         <article>
           <img src="${imageUrl}" alt="">
           <h2>${article.Title}</h2>
           <div class="carousel-tags">
-            ${tags.map(tag => {
-              let cls = 'tag';
-              if (tag.toLowerCase().includes('event')) cls += ' event';
-              if (tag.toLowerCase().includes('update')) cls += ' update';
-              if (tag.toLowerCase().includes('amogus')) cls += ' Amogus';
-              if (tag.toLowerCase().includes('league')) cls += ' league';
-              return `<span class="${cls}">${tag}</span>`;
-            }).join(' ')}
+            ${tags
+              .map((tag) => {
+                let cls = "tag";
+                if (tag.toLowerCase().includes("event")) cls += " event";
+                if (tag.toLowerCase().includes("update")) cls += " update";
+                if (tag.toLowerCase().includes("amogus")) cls += " Amogus";
+                if (tag.toLowerCase().includes("league")) cls += " league";
+                return `<span class="${cls}">${tag}</span>`;
+              })
+              .join(" ")}
           </div>
           <div class="carousel-content">
             <p>${article.summary}</p>
@@ -100,24 +109,18 @@ fetch('http://localhost:3000/api/news')
           </div>
         </article>
       `;
-    }).join('');
-  })
-  .catch(err => {
-    console.error('Error fetching articles:', err);
-  });
-
-
-</script>
+                })
+                .join("");
+            })
+            .catch((err) => {
+              console.error("Error fetching articles:", err);
+            });
+        </script>
       </div>
     </section>
     <section id="instagram">
-      <div id="instagram-header">
-
-      </div>
-      <div id="instagram-embed">
-
-      </div>
-
+      <div id="instagram-header"></div>
+      <div id="instagram-embed"></div>
     </section>
   </body>
   <footer></footer>

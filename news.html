@@ -32,7 +32,7 @@
             <!-- News will be loaded here -->
           </div>
 <script>
-fetch('http://localhost:3000/api/news')
+fetch('http://100.68.218.117:3000/api/news')
   .then(res => res.json())
   .then(json => {
     const news = json.data; // array of articles
@@ -40,7 +40,7 @@ fetch('http://localhost:3000/api/news')
     const container = document.getElementById('news-list');
     container.innerHTML = news.map(article => {
       // Build image URL similarly to your working script
-      const imageUrl = 'http://localhost:1337' + (article.cover?.formats?.medium?.url || article.cover?.url || '/placeholder.jpg');
+      const imageUrl = 'http://100.68.218.117:1337' + (article.cover?.formats?.medium?.url || article.cover?.url || '/placeholder.jpg');
       
       // Tags fallback
       const tags = Array.isArray(article.tags?.tags) ? article.tags.tags : [];

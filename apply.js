@@ -54,13 +54,13 @@ document
       return;
     }
 
-    // Link validation
+    // Link validation1
     if (!data.link.startsWith("https://")) {
       alert("Zadajte platný odkaz");
       return;
     }
 
-    fetch("http://localhost:3000/api/submit-form", {
+    fetch("http://100.68.218.117:3000/api/submit-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
