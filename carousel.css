@@ -167,7 +167,6 @@
     #latest_news {
       background-color: black;
       color: light-dark(var(--txt-light), var(--txt-dark));
-      min-height: 100svh;
       margin: 0;
       padding: 2rem;
       font-size: 1rem;

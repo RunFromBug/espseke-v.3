@@ -17,7 +17,7 @@
         <nav class="menu">
           <a href="index.html" class="active">About</a>
           <a href="apply.html">Apply</a>
-          <a href="news.html">News</a>
+          <a href="news.html?page=1">News</a>
         </nav>
       </div>
     </header>
@@ -55,73 +55,63 @@
             id="lol"
           />
         </div>
-        <img
-          src="lillia.png"
-          alt="Big Showcase"
-          class="gaming-showcase__big-picture"
-        />
       </div>
     </section>
-
     <section id="latest_news">
       <div class="carousel" mask id="carousel-news">
         <script>
-          fetch("http://100.68.218.117:3000/api/news")
-            .then((res) => res.json())
-            .then((data) => {
-              // Extract the array of articles from the response
-              const news = data.data;
+  fetch("http://100.68.218.117:3000/api/news?page=1&pageSize=6")
+    .then((res) => res.json())
+    .then((data) => {
+      const news = data.data;
 
-              // Take the first 6 articles (newest first)
-              const latest = news.slice(0, 6);
+      const container = document.getElementById("carousel-news");
+      container.innerHTML = news
+        .map((article) => {
+          const imageUrl =
+            "http://100.68.218.117:1337" +
+            (article.cover?.formats?.medium?.url ||
+              article.cover?.url ||
+              "/placeholder.jpg");
+          const tags = Array.isArray(article.tags?.tags)
+            ? article.tags.tags
+            : [];
 
-              const container = document.getElementById("carousel-news");
-              container.innerHTML = latest
-                .map((article) => {
-                  const imageUrl =
-                    "http://100.68.218.117:1337" +
-                    (article.cover?.formats?.medium?.url ||
-                      article.cover?.url ||
-                      "/placeholder.jpg");
-                  const tags = Array.isArray(article.tags?.tags)
-                    ? article.tags.tags
-                    : [];
+          return `
+            <article>
+              <img src="${imageUrl}" alt="">
+              <h2>${article.Title}</h2>
+              <div class="carousel-tags">
+                ${tags
+                  .map((tag) => {
+                    let cls = "tag";
+                    if (tag.toLowerCase().includes("event")) cls += " event";
+                    if (tag.toLowerCase().includes("update")) cls += " update";
+                    if (tag.toLowerCase().includes("amogus")) cls += " amogus";
+                    if (tag.toLowerCase().includes("league")) cls += " league";
+                    return `<span class="${cls}">${tag}</span>`;
+                  })
+                  .join(" ")}
+              </div>
+              <div class="carousel-content">
+                <p>${article.summary}</p>
+                <a href="news-detail.html?id=${article.documentId}">Read more</a>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+    })
+    .catch((err) => {
+      console.error("Error fetching articles:", err);
+    });
+</script>
 
-                  return `
-        <article>
-          <img src="${imageUrl}" alt="">
-          <h2>${article.Title}</h2>
-          <div class="carousel-tags">
-            ${tags
-              .map((tag) => {
-                let cls = "tag";
-                if (tag.toLowerCase().includes("event")) cls += " event";
-                if (tag.toLowerCase().includes("update")) cls += " update";
-                if (tag.toLowerCase().includes("amogus")) cls += " Amogus";
-                if (tag.toLowerCase().includes("league")) cls += " league";
-                return `<span class="${cls}">${tag}</span>`;
-              })
-              .join(" ")}
-          </div>
-          <div class="carousel-content">
-            <p>${article.summary}</p>
-            <a href="news-detail.html?id=${article.documentId}">Read more</a>
-          </div>
-        </article>
-      `;
-                })
-                .join("");
-            })
-            .catch((err) => {
-              console.error("Error fetching articles:", err);
-            });
-        </script>
       </div>
     </section>
     <section id="instagram">
-      <div id="instagram-header"></div>
-      <div id="instagram-embed"></div>
+<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/d30856b606405f79975861feb4a95f5d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:60%;border:0;overflow:hidden;"></iframe>
     </section>
   </body>
-  <footer></footer>
+<footer></footer>
 </html>

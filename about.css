@@ -27,7 +27,7 @@
 .gaming-showcase {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   color: white;
   font-family: "Segoe UI", sans-serif;
   padding: 100px 7vw;
@@ -65,18 +65,20 @@
 }
 
 .gaming-showcase__logos {
+  padding-top: 4vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Add this line */
   gap: 20px;
-  margin-left: 1vw;
+  margin-left: 0; /* Optional: remove margin if not needed */
 }
 
 .gaming-showcase__logo {
-  height: 40px;
-  width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1); /* optional: makes logos white if SVG or black PNGs */
-  width: 10vw;
+  width: 20vw;
   height: auto;
 }
 
@@ -86,14 +88,8 @@
   justify-content: space-between;
   width: 100%;
 }
-
-.gaming-showcase__big-picture {
-  width: 30vw; /* Adjust size as needed */
-  height: auto;
-  object-fit: cover;
-  margin-left: 2vw;
-}
 #instagram{
+  padding-top: 4vh;
 background-color: black;
 display: flex;
   justify-content: center;

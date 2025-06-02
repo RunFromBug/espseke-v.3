@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -28,21 +28,31 @@
             <!-- Can be empty or have a logo/decoration -->
           </div>
           
-          <div class="news-column" id="news-list">
-            <!-- News will be loaded here -->
+          <div class="news-column">
+            <div id="news-list">
+              <!-- News will be loaded here -->
+            </div>
+            <div id="pagination"></div>
           </div>
+        </div>
+        
 <script>
-fetch('http://100.68.218.117:3000/api/news')
+function getPageFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return parseInt(urlParams.get("page")) || 1;
+}
+
+const page = getPageFromURL();
+
+fetch(`http://100.68.218.117:3000/api/news?page=${page}&pageSize=10`)
   .then(res => res.json())
   .then(json => {
-    const news = json.data; // array of articles
+    const news = json.data;
+    const pagination = json.meta.pagination;
 
     const container = document.getElementById('news-list');
     container.innerHTML = news.map(article => {
-      // Build image URL similarly to your working script
       const imageUrl = 'http://100.68.218.117:1337' + (article.cover?.formats?.medium?.url || article.cover?.url || '/placeholder.jpg');
-      
-      // Tags fallback
       const tags = Array.isArray(article.tags?.tags) ? article.tags.tags : [];
 
       return `
@@ -69,12 +79,29 @@ fetch('http://100.68.218.117:3000/api/news')
         </div>
       `;
     }).join('');
+
+    renderPaginationControls(pagination);
   })
   .catch(err => {
     console.error('Error fetching articles:', err);
   });
 
+function renderPaginationControls(pagination) {
+  const paginationContainer = document.getElementById('pagination');
+  paginationContainer.innerHTML = ''; // Clear previous controls
+
+  const { page, pageCount } = pagination;
+
+  for (let i = 1; i <= pageCount; i++) {
+    const link = document.createElement('a');
+    link.href = `?page=${i}`;
+    link.innerText = i;
+    if (i === page) link.classList.add('active');
+    paginationContainer.appendChild(link);
+  }
+}
 </script>
+
 
         </div>
       </section>

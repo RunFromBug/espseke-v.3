@@ -80,3 +80,26 @@ html {
   background-color: black; /* Fill the rectangle */
   color: white; /* Change text color for contrast */
 }
+
+/* Add to news.css */
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 40px 0;
+  gap: 10px;
+}
+#pagination a {
+  padding: 8px 16px;
+  border: 1px solid #08c1b1;
+  border-radius: 4px;
+  color: #08c1b1;
+  text-decoration: none;
+  font-weight: bold;
+  background: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+#pagination a.active,
+#pagination a:hover {
+  background: #08c1b1;
+  color: #fff;
+}
